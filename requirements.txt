@@ -1,0 +1,16 @@
+transformers>=4.51.0
+vllm>=0.11.0
+accelerate>=0.26.0
+ifcopenshell>=0.8.2
+asyncio
+bitsnbytes
+compas
+openai
+peft
+torch
+pandas
+librosa
+sounddevice
+langchain_neo4j
+neo4j
+topologicpy==0.8.15

@@ -1,0 +1,67 @@
+Node properties:
+IfcMember {IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Name: STRING, z: FLOAT, IFC_type: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, id: INTEGER, IFC_name: STRING, bbox_dimensions: STRING, IFC_Pset_BeamCommon: STRING}
+IfcDoor {IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Name: STRING, IFC_Pset_DoorCommon: STRING, z: FLOAT, IFC_type: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, id: INTEGER, IFC_AC_Pset_IFC_Tür_-_Eine_Öffnunsgrichtung: STRING, IFC_name: STRING, bbox_dimensions: STRING, IFC_Pset_FireRatingProperties: STRING, IFC_AC_Pset_Eingangstür: STRING, IFC_AC_Pset_Schiebetür_3-teilig: STRING}
+IfcRailing {IFC_AC_Pset_Name: STRING, IFC_type: STRING, IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Geländer_horizontal_13: STRING, y: FLOAT, z: FLOAT, IFC_material_list: LIST, x: FLOAT, id: INTEGER, IFC_global_id: STRING, IFC_name: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING}
+IfcSlab {IFC_Pset_SlabCommon: STRING, IFC_type: STRING, IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Name: STRING, y: FLOAT, z: FLOAT, IFC_global_id: STRING, id: INTEGER, is_non_dimensional: STRING, x: FLOAT, IFC_name: STRING, bbox_dimensions: STRING, IFC_material_list: LIST}
+IfcOpeningElement {id: INTEGER, IFC_type: STRING, y: FLOAT, z: FLOAT, IFC_global_id: STRING, is_non_dimensional: STRING, x: FLOAT, IFC_name: STRING, bbox_dimensions: STRING, IFC_material_list: LIST}
+IfcSite {IFC_type: STRING, IFC_Pset_SiteCommon: STRING, y: FLOAT, z: FLOAT, IFC_global_id: STRING, id: INTEGER, is_non_dimensional: STRING, x: FLOAT, IFC_name: STRING, bbox_dimensions: STRING, IFC_material_list: LIST}
+IfcBuilding {IFC_type: STRING, z: FLOAT, id: INTEGER, IFC_Pset_BuildingCommon: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, IFC_material_list: LIST, IFC_name: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING}
+IfcVirtualElement {IFC_type: STRING, z: FLOAT, x: FLOAT, y: FLOAT, IFC_global_id: STRING, id: INTEGER, IFC_name: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING, IFC_material_list: LIST}
+IfcBuildingStorey {IFC_type: STRING, z: FLOAT, id: INTEGER, x: FLOAT, y: FLOAT, IFC_global_id: STRING, IFC_material_list: LIST, IFC_name: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING}
+IfcSpace {IFC_Pset_SpaceCommon: STRING, IFC_AC_Pset_Name: STRING, IFC_type: STRING, IFC_ArchiCADProperties: STRING, IFC_Pset_SpaceThermalRequirements: STRING, y: FLOAT, z: FLOAT, IFC_global_id: STRING, id: INTEGER, is_non_dimensional: STRING, x: FLOAT, IFC_AC_Pset_Allgemeiner_Raumstempel: STRING, IFC_name: STRING, bbox_dimensions: STRING, IFC_material_list: LIST}
+IfcAnnotation {z: FLOAT, IFC_type: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, id: INTEGER, IFC_name: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING, IFC_material_list: LIST}
+IfcBeam {IFC_AC_Pset_Name: STRING, z: FLOAT, IFC_type: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, IFC_ArchiCADProperties: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, id: INTEGER, IFC_name: STRING, bbox_dimensions: STRING, IFC_Pset_BeamCommon: STRING}
+IfcWindow {IFC_type: STRING, IFC_AC_Pset_Name: STRING, z: FLOAT, id: INTEGER, IFC_ArchiCADProperties: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, bbox_dimensions: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, IFC_Pset_WindowCommon: STRING, IFC_AC_Pset_IFC_Fenster_-_zwei_Panele_-_Vertikal: STRING, IFC_name: STRING, IFC_Pset_FireRatingProperties: STRING, IFC_AC_Pset_Rundfenster_13: STRING}
+IfcStair {IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Name: STRING, z: FLOAT, IFC_type: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, id: INTEGER, bbox_dimensions: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, IFC_Pset_StairCommon: STRING, IFC_AC_Pset_Treppe_FZK-Haus: STRING, IFC_name: STRING}
+IfcWallStandardCase {IFC_type: STRING, z: FLOAT, IFC_ArchiCADProperties: STRING, IFC_AC_Pset_Name: STRING, x: FLOAT, y: FLOAT, IFC_global_id: STRING, id: INTEGER, bbox_dimensions: STRING, is_non_dimensional: STRING, IFC_material_list: LIST, IFC_Pset_WallCommon: STRING, IFC_name: STRING}
+Relationship properties:
+IfcRelContainedInSpatialStructure {IFC_global_id: INTEGER, IFC_type: STRING}
+IfcRelFillsElement {IFC_type: STRING, IFC_global_id: INTEGER}
+IfcRelSpaceBoundary {IFC_name: STRING, IFC_type: STRING, IFC_global_id: INTEGER}
+IfcRelVoidsElement {IFC_type: STRING, IFC_global_id: INTEGER}
+IfcRelAggregates {IFC_type: STRING, IFC_global_id: INTEGER}
+IfcRelConnectsPathElements {IFC_global_id: INTEGER, IFC_type: STRING}
+The relationships:
+(:IfcMember)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcDoor)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcDoor)-[:IfcRelFillsElement]->(:IfcOpeningElement)
+(:IfcDoor)-[:IfcRelSpaceBoundary]->(:IfcSpace)
+(:IfcRailing)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcSlab)-[:IfcRelSpaceBoundary]->(:IfcSpace)
+(:IfcSlab)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcSlab)-[:IfcRelVoidsElement]->(:IfcOpeningElement)
+(:IfcOpeningElement)-[:IfcRelVoidsElement]->(:IfcWallStandardCase)
+(:IfcOpeningElement)-[:IfcRelVoidsElement]->(:IfcSlab)
+(:IfcOpeningElement)-[:IfcRelFillsElement]->(:IfcWindow)
+(:IfcOpeningElement)-[:IfcRelFillsElement]->(:IfcDoor)
+(:IfcSite)-[:IfcRelAggregates]->(:IfcBuilding)
+(:IfcBuilding)-[:IfcRelAggregates]->(:IfcBuildingStorey)
+(:IfcBuilding)-[:IfcRelAggregates]->(:IfcSite)
+(:IfcVirtualElement)-[:IfcRelSpaceBoundary]->(:IfcSpace)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcSlab)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcWallStandardCase)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcWindow)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcStair)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcAnnotation)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcBeam)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcDoor)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcMember)
+(:IfcBuildingStorey)-[:IfcRelContainedInSpatialStructure]->(:IfcRailing)
+(:IfcBuildingStorey)-[:IfcRelAggregates]->(:IfcSpace)
+(:IfcBuildingStorey)-[:IfcRelAggregates]->(:IfcBuilding)
+(:IfcSpace)-[:IfcRelSpaceBoundary]->(:IfcWindow)
+(:IfcSpace)-[:IfcRelSpaceBoundary]->(:IfcSlab)
+(:IfcSpace)-[:IfcRelSpaceBoundary]->(:IfcWallStandardCase)
+(:IfcSpace)-[:IfcRelSpaceBoundary]->(:IfcDoor)
+(:IfcSpace)-[:IfcRelSpaceBoundary]->(:IfcVirtualElement)
+(:IfcSpace)-[:IfcRelAggregates]->(:IfcBuildingStorey)
+(:IfcAnnotation)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcBeam)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcWindow)-[:IfcRelFillsElement]->(:IfcOpeningElement)
+(:IfcWindow)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcWindow)-[:IfcRelSpaceBoundary]->(:IfcSpace)
+(:IfcStair)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcWallStandardCase)-[:IfcRelConnectsPathElements]->(:IfcWallStandardCase)
+(:IfcWallStandardCase)-[:IfcRelContainedInSpatialStructure]->(:IfcBuildingStorey)
+(:IfcWallStandardCase)-[:IfcRelSpaceBoundary]->(:IfcSpace)
+(:IfcWallStandardCase)-[:IfcRelVoidsElement]->(:IfcOpeningElement)

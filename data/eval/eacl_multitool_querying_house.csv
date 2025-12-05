@@ -1,0 +1,16 @@
+ID;Building;Difficulty;Position;Rotation;Other Premises;Query;Retrieved IDs;Retrieved IDs Type;Answer;Answer Type;Optimal Steps
+M1;House;Easy;[340.8, 532.7, 84.7];[2.4, 33.0, 0];2 doors;What is the name of the left door?;0pGAjlJMP3ifYPATVF5xAR;String;Innentuer-2;String;2
+M3;House;Easy;[340.8, 532.7, 84.7];[2.4, 33.0, 0];2 doors;What is the width of the right door?;1Oms875aH3Wg$9l65H2ZGw;String;0.885;Value;2
+M5;House;Easy;[571.9, 155.6, 393.6];[350.9, 270.4, 0];-;Get the depth of the object right in front of me.;0knNIAVBPBFvBy_m5QVHsU;String;0.3;Value;2
+M7;House;Easy;[281.3, 601.3, 112.0];[357.4, 180.9, 0];1 door;Retrieve the name of the door ahead.;1M$gxUrX1Fiwe3P64ww7U5;String;Terrassentuer;String;2
+M9;House;Easy;[236.6, 149.8, 127.3];[9.6, 268.0, 0];-;What is the type of the object in front of me?;0B1RwEzzP3CfME5NR$Vqh5;String;IfcWindow;String;2
+M11;House;Easy;[750.7, 885.2, 158.8];[348.3, 56.4, 0];2 walls;What is the material of the right wall?;25fsbPyk15VvuXI$yNKenK;String;Leichtbeton 102890359;String;2
+M13;House;Easy;[750.7, 885.2, 158.8];[348.3, 56.4, 0];2 walls;What is the material of the left wall?;1bzfVsJqn8De5PukCrqylz;String;Leichtbeton 102890359;String;2
+M15;House;Easy;[842.5, 593.4, 142.0];[356.7, 357.2, 0];-;Tell me the name and type of the object in front of me.;2Q9w7oRXP249jBobEMVqlZ;String;"{""name"": ""EG-Fenster-2"",  ""type"": ""IfcWindow""}";Dict;2
+M17;House;Hard;[90.0, 203.7, 195.9];[14.6, 23.9, 0];-;What is the mean height of the objects that are not in my sight?;['0B1RwEzzP3CfME5NR$Vqh5', '16DNNqzfP2thtfaOflvsKA', '25nJxEpYf8LRDJNkMUVO0m', '3BFcylCsX74PQAoRAe5fNv', '1M$gxUrX1Fiwe3P64ww7U5'];List;1.735;Value;2
+M19;House;Hard;[501.0, 204.4, 100.9];[359.4, 272.7, 0];-;Get the dimensions of the object before me.;2jTRqchjf7oB0yhQ6462T0;String;"{""bbox_width"": 1.01, ""bbox_height"": 2.01, ""bbox_depth"": 0.19, ""bbox_volume"": 0.3857}";Dict;2
+M21;House;Hard;[502.3, -455.2, 79.9];[355.5, 91.0, 0];-;Get the height of the nearest door and the material of the furthest wall;"{""door"": ['2jTRqchjf7oB0yhQ6462T0'], ""wall"" ['3VCarUKgH1buLo22Ozxe6J']}";Dict;"{""height"": 2.01, ""name"": ""Leichtbeton 102890359""]";Dict;2
+M23;House;Hard;[502.3, -455.2, 79.9];[355.5, 91.0, 0];1 door;What is the name of the nearest door and the height of the furthest wall?;"{""door"": ['2jTRqchjf7oB0yhQ6462T0'], ""wall"" ['3VCarUKgH1buLo22Ozxe6J']}";Dict;"{""name"": ""Haustuer"", ""height"": 3.3868]";Dict;2
+M25;House;Hard;[928.2, 568.1, 115.7];[2.5, 355.9, 0];-;What is the mean width of the objects that I can see?;['0KMpiAlnb52RgQuM1CwVfd', '1bzfVsJqn8De5PukCrqylz', '2Q9w7oRXP249jBobEMVqlZ'];List;10.666666666666666;Value;2
+M27;House;Hard;[188.6, 604.2, 105.7];[359.2, 160.9, 0];1+ doors, 1+ windows;List all doors and windows in sight.;"{""door"": ['1M$gxUrX1Fiwe3P64ww7U5'], ""window"": ['3BFcylCsX74PQAoRAe5fNv']}";Dict;"[""Terrassentuer"", ""EG-Fenster-5""]";List;2
+M29;House;Hard;[457.0, 654.4, 101.8];[0.7, 310.3, 0];1+ doors;List all doors that are not in sight.;['1Oms875aH3Wg$9l65H2ZGw', '1M$gxUrX1Fiwe3P64ww7U5'];List;"[""Terrassentuer"", ""Innentuer-1""]";List;2

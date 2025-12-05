@@ -1,0 +1,16 @@
+ID;Building;Difficulty;Query;Answer;Answer Type
+C1;House;Easy;How many windows are there in the building?;11;Value
+C3;House;Easy;How many beams are there in total?;4;Value
+C5;House;Easy;Is the number of windows in the building larger than 10?;No;String
+C7;House;Easy;Is the number of doors smaller than 6?;Yes;String
+C9;House;Easy;Is the number of beams in the building exaclty 3?;No;String
+C11;House;Easy;How many more beams should the house have to be the same as the number of doors?;1;Value
+C13;House;Easy;List all building storeys.;"[""Dachgeschoss"", ""Erdgeschoss""]";List
+C15;House;Easy;In which year was the school built?;2008;Value
+C17;House;Hard;Get the mean height of all doors.;2.083;Value
+C19;House;Hard;Which spaces have doors?;"[""1"", ""2"", ""3"", ""4"", ""5""]";List
+C21;House;Hard;List the amount of windows in the house grouped by building storeys.;"{""Dachgeschoss"": 2, ""Erdgeschoss"": 9}";Dict
+C23;House;Hard;What is the width of the tallest door in the building?;2.01;Value
+C25;House;Hard;Get the mean dimensions of the windows in the second floor.;"{""width"": 1.0, ""height"": 1.0, ""depth"": 0.09}";Dict
+C27;House;Hard;How many walls have windows in them?;7;Value
+C29;House;Hard;Is there any storey with more than 4 windows? And if so, what is it called?;Erdgeschoss;String

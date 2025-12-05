@@ -1,0 +1,26 @@
+voiceLayer:
+    sendPartials: false
+    apiUrl: ""
+    apiKey: "EMPTY"
+sandbox:
+    ifcPath: "data/ifc/Technical_school-current_m.ifc"
+    ipAddress: "127.0.0.1"
+    port: 9999
+helperLLM:
+    enableThinking: false
+    model: "Qwen/Qwen3-14B"
+    apiUrl: "http://localhost:8008/v1"
+    apiKey: "EMPTY"
+cypherLLM:
+    model: "text2cypher"
+    apiUrl: "http://localhost:8007/v1"
+    apiKey: "EMPTY"
+neo4j:
+    apiUri: "bolt://127.0.0.1:7686"
+    username: "neo4j"
+    password: "neo4j"
+    database: "neo4j"
+    resetGraph: true # set to false if the correct graph is already loaded in neo4j
+agent:
+    max_iterations: 8
+    verbose: true # or false; making react reasoning steps visible or not

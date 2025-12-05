@@ -1,0 +1,16 @@
+ID;Building;Difficulty;Query;Answer;Answer Type
+C2;School;Easy;How many walls are there?;146;Value
+C4;School;Easy;What is the total number of spaces in the building?;116;Value
+C6;School;Easy;How many windows are in the building?;24;Value
+C8;School;Easy;Is the number of windows larger than the number of doors?;No;String
+C10;School;Easy;What is the difference between the number of doors and the number of windows in the building?;76;Value
+C12;School;Easy;How many stairs are there in the building?;10;Value
+C14;School;Easy;List all walls that are connected to other walls.;142;Value
+C16;School;Hard;How many doors are at the entry level?;29;Value
+C18;School;Hard;How many rooms are in the third floor?;33;Value
+C20;School;Hard;How many walls have doors in them?;34;Value
+C22;School;Hard;Get the mean volume of all walls.;5.713132;Value
+C24;School;Hard;Return the number of doors per storey in the building.;"{""01 - Entry Level"": 29, ""02 - Floor"": 26, ""03 - Floor"": 28}";Dict
+C26;School;Hard;What is the height of the wall with the highest number of windows?;11.4;Value
+C28;School;Hard;What is the storey with the highest amount of rooms in it?;02 - Floor;String
+C30;School;Hard;List the storeys with a higher number of doors compared to windows.;"[""01 - Entry Level"", ""03 - Floor"", ""02 - Floor""]";List
