@@ -36,12 +36,11 @@ In any case, the sandbox will be empty with no building at all in sight. This is
 
 It is necessary to work with Python 3.11 or more. You are free to use Conda or Pip, but explanations focus on Pip. To install the minimum requirements to run the repository, you first need to install the dependencies found in `requirements.txt` with `pip install -r requirements.txt`.
 
-**Note**: Apart from those dependencies, you will also need to install the package `ìfcopenshell`. Unfortunately, sometimes installing it via pip gives an error, so you will need to enter on this [link](https://docs.ifcopenshell.org/ifcopenshell-python/installation.html), go to the ZIP packages section, and follow the instructions there to install it manually.
+**Note**: Apart from those dependencies, you will also need to install the package `ifcopenshell`. Unfortunately, sometimes installing it via pip gives an error, so you will need to enter on this [link](https://docs.ifcopenshell.org/ifcopenshell-python/installation.html), go to the ZIP packages section, and follow the instructions there to install it manually.
 
 ### Java 17
 
-TBD
-
+It is necessary to install JAVA 17 to use Neo4j graphs, a graph database management system that stores data as nodes and relationships (or edges). When installed, update `scripts/neo4j_install.sh` with the correct `JAVA_HOME` path and execute the script to download and install Neo4j 5.16 in `src/neo4j`.
 
 ### Sandbox IFC Loader 
 
@@ -50,11 +49,13 @@ Finally, in order to load .ifc files into the Sandbox, you need to download a fi
 
 ## Neo4j server
 
-TBD
+After installing Java and Neo4j, we need to install APOC (Awesome Procedures On Cypher), a Neo4j library providing hundreds of user-defined procedures and functions that extend Cypher's capabilities for data integration, advanced graph algorithms, data conversion (JSON, CSV), and complex operations like conditional Cypher execution and graph manipulation. To do so, just move the `.jar` file found in `src/neo4j/labs` to `src/neo4j/plugins`.
 
-## VLLM server
+After this, run `scripts/neo4j_start.sh` to initiate the Neo4j server and use `scripts/neo4j_stop.sh` to stop it when needed.
 
-TBD
+## vLLM server
+
+vLLM is a Python library for LLM inference and serving. It has already been installed via pip, and serving LLMs is done easily by runnning `scripts/vllm_start_router.slurm`. This script is preapred to be run in a NVIDIA A100 gpu with 80GB VRAM. You may need to alter the script according to your hardware, as there are two LLMs to be served (8B and 9B models).
 
 ## Main Script: *main.py*
 
@@ -62,7 +63,7 @@ This script is prepared to connect to the sandbox and the Neo4j server, and exec
 
  1) Run the sandbox (as specified above).
  2) Start the Neo4j server.
- 2) Run the VLLM server, either on your device or a server (follow the example at `scripts/vllm_start_router.slurm`).
+ 3) Run the vLLM server, either on your device or a server (follow the example at `scripts/vllm_start_router.slurm`).
 
 To run the script, execute the following:
 
@@ -73,10 +74,10 @@ python main.py --config CONFIG_FILE
 The configuration is specified in config.yaml, where you can specify different input parameters. You can find examples in They are divided into six groups:
 
  * *sandbox*: you can specify the IFC file to be loaded in the sandbox and the IP address and port in which the sandbox is listening (127.0.0.1:9999 by default).
- * *helperLLM*: when using a VLLM server, you will need to specify the model name and the API's URL and key to connect to that specific LLM (which are set when initializing the server).
- * *cypherLLM*: TBD
- * *neo4j*: TBD
- * *agent*: TBD
+ * *helperLLM*: when using a vLLM server, you will need to specify the model name and the API's URL and key to connect to the LLM that acts as the router and Python code generator.
+ * *cypherLLM*: when using a vLLM server, you will need to specify the model name and the API's URL and key to connect to the LLM that generates Cypher code.
+ * *neo4j*: when using the neo4j server, you will need to define the API's URL, username, password and the database name, which can be set here. You can also specify whether you want to reset the Neo4j graph when running the main script or not.
+ * *agent*: specifies the maximum number of turns that the router will take before finishing, as well as activating the verbose mode of the main script.
  * *voiceLayer*: you can specify the api URL and key, along an input argument that controls whether partial audios are transcribed or not. 
 
 For this script, the *voiceLayer* is optional. However, you don't need to remove its content in the config file if you are not using it.
